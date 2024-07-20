@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.throw-right {
+  animation: throwRight 0.7s forwards;
+}
+
+.throw-left {
+  animation: throwLeft 0.7s forwards;
+}
+
+@keyframes throwRight {
+  0% {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(240px, -100px) rotate(100deg);
+    opacity: 0;
+  }
+}
+
+@keyframes throwLeft {
+  0% {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-240px, -100px) rotate(-100deg);
+    opacity: 0;
+  }
+}
