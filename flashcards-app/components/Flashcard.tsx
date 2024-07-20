@@ -31,9 +31,9 @@ const Flashcard: React.FC<FlashcardProps> = ({ frontQuestion, backAnswer, onAnsw
   }, [flipBack]);
 
   return (
-    <div className="relative w-80 h-48 bg-white rounded-lg shadow-lg perspective">
+    <div className="flashcard-box"> {/* Parent container */}
       <div
-        className={`absolute inset-0 w-full h-full bg-white border-2 border-gray-300 rounded-lg transition-transform duration-700 transform-style-preserve-3d ${flipped ? 'rotate-y-180' : ''
+        className={`absolute inset-0 w-full h-full bg-white border-2 border-gray-600 rounded-lg transition-transform duration-700 transform-style-preserve-3d ${flipped ? 'rotate-y-180' : ''
           } ${throwDirection === 'right' ? 'throw-right' : ''} ${throwDirection === 'left' ? 'throw-left' : ''}`}
         onClick={() => !flipBack && setFlipped(!flipped)}
       >
@@ -45,20 +45,18 @@ const Flashcard: React.FC<FlashcardProps> = ({ frontQuestion, backAnswer, onAnsw
           <div className="absolute bottom-4 flex space-x-4">
             <button
               className="px-4 py-2 bg-red-500 text-white rounded"
-
               onClick={(e) => {
                 e.stopPropagation();
-                handleAnswer(true);
+                handleAnswer(false);
               }}
             >
               Wrong
             </button>
             <button
               className="px-4 py-2 bg-green-500 text-white rounded"
-
               onClick={(e) => {
                 e.stopPropagation();
-                handleAnswer(false);
+                handleAnswer(true);
               }}
             >
               Correct

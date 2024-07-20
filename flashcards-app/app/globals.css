@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.perspective {
-  perspective: 1000px;
+/* Add this to your Tailwind CSS file */
+.flashcard-box {
+  @apply relative w-96 h-96 mx-auto mt-10;
 }
+
+
+
 
 .transform-style-preserve-3d {
   transform-style: preserve-3d;
